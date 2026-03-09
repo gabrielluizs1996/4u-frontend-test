@@ -1,73 +1,63 @@
-# Welcome to your Lovable project
+# 🎮 4U - Frontend Test
 
-## Project info
+Aplicação web para visualização e gerenciamento de **conquistas de jogos**.  
+A interface permite acompanhar o progresso de conquistas, pesquisar conquistas específicas e visualizar informações detalhadas.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+O projeto foi desenvolvido com foco em **interface moderna, arquitetura baseada em componentes e experiência de usuário**.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+# 🚀 Tecnologias Utilizadas
 
-**Use Lovable**
+Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- **React**
+- **TypeScript**
+- **Vite**
+- **Tailwind CSS**
+- **shadcn-ui**
 
-Changes made via Lovable will be committed automatically to this repo.
+Essas ferramentas permitem:
 
-**Use your preferred IDE**
+- Desenvolvimento rápido
+- Componentização da interface
+- Estilização moderna e responsiva
+- Build otimizado
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+# 💻 Como Rodar o Projeto
 
-Follow these steps:
+Certifique-se de ter **Node.js** e **npm** instalados.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+Recomendado utilizar **nvm** para gerenciamento de versões do Node:  
+https://github.com/nvm-sh/nvm
+
+### 1. Clonar o repositório
+
+```bash
 git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
 cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Após iniciar, o projeto estará disponível no navegador em:
+http://localhost:8080
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+# 📦 Scripts Disponíveis
+- npm run dev
+- npm run build
+- npm run preview
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+# 📱 Funcionalidades da Interface
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- Visualização de conquistas de jogos
+- Barra de progresso de conquistas
+- Pesquisa de conquistas
+- Visualização detalhada de conquistas
+- Interface responsiva em tema escuro

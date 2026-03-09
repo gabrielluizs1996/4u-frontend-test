@@ -13,12 +13,12 @@ const AchievementWidget = () => {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="w-full max-w-xl rounded-lg border border-border bg-card p-5"
+        className="w-full max-w-xl rounded-lg bg-card p-5"
       >
         {/* Header */}
         <div className="mb-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Trophy className="h-5 w-5 text-neon-purple" />
+            <Trophy className="h-5 w-5 text-white" />
             <span className="font-display text-lg font-semibold text-muted-foreground">
               Conquistas neste jogo
             </span>
@@ -47,15 +47,15 @@ const AchievementWidget = () => {
                 transition={{ delay: i * 0.1 }}
                 className="flex min-w-[100px] flex-col items-center gap-2"
               >
-                <div className="relative">
-                  <div className="h-20 w-20 overflow-hidden rounded-lg border border-border bg-surface-elevated p-2">
+                <div className="relative w-[103px] h-[103px]">
+                  <div className="overflow-hidden rounded-lg bg-surface-elevated">
                     <img
                       src={achievement.icon}
                       alt={achievement.title}
                       className="h-full w-full object-contain"
                     />
                   </div>
-                  <div className="absolute -left-1 -top-1 flex h-5 w-5 items-center justify-center rounded-sm bg-neon-purple">
+                  <div className="absolute left-0 top-0 flex w-[37px] h-[37px] items-center justify-center rounded-tl-lg rounded-br-lg  bg-neon-purple">
                     <Star className="h-3 w-3 text-primary-foreground" fill="currentColor" />
                   </div>
                 </div>
