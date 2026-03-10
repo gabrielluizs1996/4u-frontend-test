@@ -1,4 +1,4 @@
-import { X, ChevronLeft, ChevronRight, DollarSign, Star } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, DollarSign, Medal } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   type Achievement,
@@ -34,20 +34,20 @@ const AchievementDetailModal = ({ achievement, onClose, onNavigate }: Props) => 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
-          className="relative mx-4 w-full max-w-2xl overflow-hidden rounded-lg border border-border bg-card"
+          className="relative mx-4 w-full max-w-2xl overflow-hidden rounded-lg bg-card"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="flex items-center justify-between border-b border-border px-6 py-4">
-            <div className="flex items-center gap-3">
-              <Star className="h-5 w-5 text-neon-purple" />
+          <div className="flex items-center justify-between border-b border-black px-6 py-4">
+            <div className="flex items-center gap-5">
+              <Medal className="h-6 w-6 text-white" />
               <span className="font-display text-lg font-semibold text-muted-foreground">
                 Conquistas neste jogo
               </span>
             </div>
             <button
               onClick={onClose}
-              className="rounded-full p-1.5 text-muted-foreground transition-colors hover:text-foreground"
+              className="rounded-full p-1.5 text-white bg-black transition-colors hover:text-foreground"
             >
               <X className="h-5 w-5" />
             </button>
@@ -56,7 +56,7 @@ const AchievementDetailModal = ({ achievement, onClose, onNavigate }: Props) => 
           {/* Achievement Info */}
           <div className="px-6 py-5">
             <div className="mb-5 flex items-center gap-4">
-              <div className="h-16 w-16 overflow-hidden rounded-lg border border-border bg-surface-elevated p-2">
+              <div className="h-16 w-16 overflow-hidden rounded-lg bg-surface-elevated p-2">
                 <img
                   src={achievement.icon}
                   alt={achievement.title}
@@ -94,7 +94,7 @@ const AchievementDetailModal = ({ achievement, onClose, onNavigate }: Props) => 
           </div>
 
           {/* Actions */}
-          <div className="flex items-center gap-2 border-t border-border px-6 py-4">
+          <div className="flex items-center gap-2 border-t border-black px-6 py-4">
             <button
               onClick={() => onNavigate("prev")}
               className="rounded-full border border-border bg-secondary p-2.5 text-foreground transition-colors hover:bg-muted"
@@ -106,7 +106,7 @@ const AchievementDetailModal = ({ achievement, onClose, onNavigate }: Props) => 
               marcar como venda
             </button>
             <button className="flex flex-1 items-center justify-center gap-2 rounded-full border border-border bg-secondary py-2.5 font-display text-sm font-semibold text-foreground transition-colors hover:bg-muted">
-              <Star className="h-4 w-4" />
+              <Medal className="h-4 w-4" />
               fixar
             </button>
             <button

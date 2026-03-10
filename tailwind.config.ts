@@ -52,6 +52,8 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         "neon-purple": "hsl(var(--neon-purple))",
+        "primary-blue": "hsl(var(--primary-blue))",
+        "secondary-blue": "hsl(var(--secondary-blue))",
         "neon-cyan": "hsl(var(--neon-cyan))",
         "surface-elevated": "hsl(var(--surface-elevated))",
         "surface-overlay": "hsl(var(--surface-overlay))",
