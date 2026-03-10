@@ -1,12 +1,29 @@
 import { useState } from "react";
 import { ChevronRight, Pencil, Star, Medal } from "lucide-react";
 import { motion } from "framer-motion";
-import { achievements } from "@/data/achievements";
+import { Achievement, achievements } from "@/data/achievements";
 import AchievementModal from "./AchievementModal";
+import AchievementDetailModal from "./AchievementDetailModal";
 
 const AchievementWidget = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const pinnedAchievements = achievements.filter((a) => a.isPinned);
+  const [detailAchievement, setDetailAchievement] = useState<Achievement | null>(null);
+
+  const handleNavigate = (direction: "prev" | "next") => {
+    if (!detailAchievement) return;
+
+    const idx = pinnedAchievements.findIndex(
+      (a) => a.id === detailAchievement.id,
+    );
+
+    const newIdx =
+      direction === "next"
+        ? (idx + 1) % pinnedAchievements.length
+        : (idx - 1 + pinnedAchievements.length) % pinnedAchievements.length;
+
+    setDetailAchievement(pinnedAchievements[newIdx]);
+  };
 
   return (
     <>
@@ -46,12 +63,13 @@ const AchievementWidget = () => {
         <div className="flex items-center p-8">
           <div className="flex gap-3 overflow-x-auto pb-1 scrollbar-hide flex-1">
             {pinnedAchievements.map((achievement, i) => (
-              <motion.div
+              <motion.button
+                onClick={() => setDetailAchievement(achievement)}
                 key={achievement.id}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: i * 0.1 }}
-                className="flex min-w-[103px] flex-col items-center gap-2"
+                className="flex min-w-[103px] flex-col items-center gap-2 rounded-lg p-1 hover:bg-primary-blue"
               >
                 <div className="relative w-[103px] h-[103px]">
                   <div className="overflow-hidden rounded-lg bg-surface-elevated">
@@ -71,7 +89,7 @@ const AchievementWidget = () => {
                 <span className="text-center max-w-[100px] font-body text-xs text-muted-foreground leading-tight">
                   {achievement.title}
                 </span>
-              </motion.div>
+              </motion.button>
             ))}
           </div>
           <button
@@ -84,6 +102,11 @@ const AchievementWidget = () => {
       </motion.div>
 
       <AchievementModal open={modalOpen} onClose={() => setModalOpen(false)} />
+      <AchievementDetailModal
+        achievement={detailAchievement}
+        onClose={() => setDetailAchievement(null)}
+        onNavigate={handleNavigate}
+      />
     </>
   );
 };
