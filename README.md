@@ -36,8 +36,8 @@ https://github.com/nvm-sh/nvm
 ### 1. Clonar o repositório
 
 ```bash
-git clone <YOUR_GIT_URL>
-cd <YOUR_PROJECT_NAME>
+git clone https://github.com/gabrielluizs1996/4u-frontend-test
+cd 4u-frontend-test
 npm install
 npm run dev
 ```
